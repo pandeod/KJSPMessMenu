@@ -1,12 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    android:background="#0000ff"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout
+    android:background="@drawable/app_background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:text="Second View"
+    <LinearLayout
+        style="@style/dayname_box"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            style="@style/dayname_content"
+            android:layout_width="185dp"
+            android:layout_height="match_parent"
+            android:text="Monday" />
+
+        <TextView
+            style="@style/dayname_content"
+            android:layout_width="158dp"
+            android:layout_height="match_parent"
+            android:text="Week No." />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/meal_type_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/meal_type_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/breakFast" />
+
+        <TextView
+            style="@style/meal_content"
+            android:text="Contents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/meal_type_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/meal_type_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lunch" />
+
+        <TextView
+            style="@style/meal_content"
+            android:text="Contents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/meal_type_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/meal_type_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/snacks" />
+
+        <TextView
+            style="@style/meal_content"
+            android:text="Contents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/meal_type_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/meal_type_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dinner" />
+
+        <TextView
+            style="@style/meal_content"
+            android:text="Contents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

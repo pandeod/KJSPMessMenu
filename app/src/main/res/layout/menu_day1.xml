@@ -15,7 +15,7 @@
             style="@style/dayname_content"
             android:layout_width="185dp"
             android:layout_height="match_parent"
-            android:text="Day of Week" />
+            android:text="Sunday" />
 
         <TextView
             style="@style/dayname_content"
@@ -33,25 +33,7 @@
             style="@style/meal_type_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Meal of Day" />
-
-        <TextView
-           style="@style/meal_content"
-            android:text="Contents"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        style="@style/meal_type_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            style="@style/meal_type_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Meal of Day" />
+            android:text="@string/breakFast" />
 
         <TextView
             style="@style/meal_content"
@@ -69,7 +51,7 @@
             style="@style/meal_type_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Meal of Day" />
+            android:text="@string/lunch" />
 
         <TextView
             style="@style/meal_content"
@@ -78,6 +60,40 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
+    <LinearLayout
+        style="@style/meal_type_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <TextView
+            style="@style/meal_type_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/snacks" />
+
+        <TextView
+            style="@style/meal_content"
+            android:text="Contents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/meal_type_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/meal_type_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dinner" />
+
+        <TextView
+            style="@style/meal_content"
+            android:text="Contents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
 </LinearLayout>
