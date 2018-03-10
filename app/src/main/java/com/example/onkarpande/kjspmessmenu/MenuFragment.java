@@ -9,6 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.ToxicBakery.viewpager.transforms.AccordionTransformer;
+import com.ToxicBakery.viewpager.transforms.CubeInTransformer;
+import com.ToxicBakery.viewpager.transforms.RotateUpTransformer;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,6 +36,7 @@ public class MenuFragment extends Fragment {
         ViewPager viewPager =result.findViewById(R.id.pager);
         ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getChildFragmentManager());
         viewPager.setAdapter(pagerAdapter);
+        viewPager.setPageTransformer(true, new AccordionTransformer());
 
         return result;
     }
