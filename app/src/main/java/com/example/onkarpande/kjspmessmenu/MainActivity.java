@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity
             TodayFragment mTodayFragment = new TodayFragment();
             FragmentManager mFragmentManager =getSupportFragmentManager();
             mFragmentManager.beginTransaction().replace(R.id.menu_list,mTodayFragment).commit();
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_menu) {
             setTitle("Menu");
             MenuFragment mMenuFragment=new MenuFragment();
             FragmentManager mFragmentManager =getSupportFragmentManager();
