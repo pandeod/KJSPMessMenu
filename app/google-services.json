@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "701208039497",
+    "firebase_url": "https://messmenu-69461.firebaseio.com",
+    "project_id": "messmenu-69461",
+    "storage_bucket": "messmenu-69461.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701208039497:android:7f47646bb9c96b0c",
+        "android_client_info": {
+          "package_name": "com.example.onkarpande.kjspmessmenu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701208039497-534mi52s52t1vja033m4p60p9fuv0jdd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.onkarpande.kjspmessmenu",
+            "certificate_hash": "b062166c87e7c38aba35c2354de15247ee467bfa"
+          }
+        },
+        {
+          "client_id": "701208039497-00sch8jhchs74u1umcd5tesp1i4ebmtj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF7a2Vo8A5N5tMdk12Ja0p26mRL7XWyzQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701208039497-00sch8jhchs74u1umcd5tesp1i4ebmtj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,10 +4,102 @@
     android:layout_height="match_parent"
     tools:context="com.example.onkarpande.kjspmessmenu.TodayFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:background="@drawable/app_background"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="todays menu" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            style="@style/dayname_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/dayname_content"
+                android:layout_width="185dp"
+                android:layout_height="match_parent"
+                android:text="Day of Week" />
+
+            <TextView
+                style="@style/dayname_content"
+                android:layout_width="158dp"
+                android:layout_height="match_parent"
+                android:text="Week No." />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/meal_type_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/meal_type_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/breakFast" />
+
+            <TextView
+                style="@style/meal_content"
+                android:text="Contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/meal_type_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/meal_type_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lunch" />
+
+            <TextView
+                style="@style/meal_content"
+                android:text="Contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/meal_type_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/meal_type_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/snacks" />
+
+            <TextView
+                style="@style/meal_content"
+                android:text="Contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/meal_type_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/meal_type_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dinner" />
+
+            <TextView
+                style="@style/meal_content"
+                android:text="Contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </FrameLayout>

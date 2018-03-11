@@ -29,13 +29,13 @@
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginRight">16dp</item>
         <item name="android:layout_marginBottom">0dp</item>
-        <item name="android:background">#8e99d7</item>
+        <item name="android:background">@color/meal_container</item>
         <item name="android:orientation">vertical</item>
     </style>
 
     <style name="dayname_content">
         <item name="android:background">@color/colorPrimary</item>
-        <item name="android:textColor">#ffffff</item>
+        <item name="android:textColor">@color/textColor</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textSize">22sp</item>
         <item name="android:textAlignment">center</item>
@@ -44,7 +44,7 @@
     <style name="meal_type_header">
         <item name="android:padding">5dp</item>
         <item name="android:background">@color/colorPrimary</item>
-        <item name="android:textColor">#ffffff</item>
+        <item name="android:textColor">@color/textColor</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textSize">22sp</item>
         <item name="android:textAlignment">center</item>
@@ -53,7 +53,7 @@
 
     <style name="meal_content">
         <item name="android:padding">5dp</item>
-        <item name="android:textColor">#ffffff</item>
+        <item name="android:textColor">@color/textColor</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textSize">22sp</item>
     </style>

@@ -1,6 +1,7 @@
 package com.example.onkarpande.kjspmessmenu;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
@@ -13,9 +14,33 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    // final variables
+    public static final String ANONYMOUS="Android";
+    public static final String ANONYMOUS_EMAIL="android@studio.com";
+    public static final String ANONYMOUS_PIC_URL="";
+    public static final int RC_SIGN_IN=1;
+
+    //other objects
+    private String mUserName;
+    private String mUserEmail;
+    private  String mUserPicUrl;
+
+    //firebase predefined objects
+
+    private FirebaseAuth mFirebaseAuth;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +48,18 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mUserName=ANONYMOUS;
+        mUserEmail=ANONYMOUS_EMAIL;
+        mUserPicUrl=ANONYMOUS_PIC_URL;
+
+        //initialize firebase objects
+
+        mFirebaseAuth=FirebaseAuth.getInstance();
+
+        //persists data on device
+        //FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -45,8 +82,52 @@ public class MainActivity extends AppCompatActivity
         navigationView.getMenu().getItem(0).setChecked(true);
         onNavigationItemSelected(navigationView.getMenu().getItem(0));
 
+        View headerView= navigationView.getHeaderView(0);
+        final TextView userName=headerView.findViewById(R.id.userName);
+        final TextView userEmail=headerView.findViewById(R.id.userEmail);
+        final ImageView userPic=headerView.findViewById(R.id.userPic);
+
+        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user=firebaseAuth.getCurrentUser();
+                if(user!=null)
+                {
+                    mUserName=user.getDisplayName();
+                    mUserEmail=user.getEmail();
+                    userName.setText(mUserName);
+                    userEmail.setText(mUserEmail);
+                    userPic.setImageResource(R.drawable.user_icon);
+                }
+                else
+                {
+                    startActivityForResult(
+                            AuthUI.getInstance()
+                            .createSignInIntentBuilder()
+                            .setIsSmartLockEnabled(false)
+                            .setAvailableProviders(Arrays.asList(
+                                    new AuthUI.IdpConfig.EmailBuilder().build(),
+                                    new AuthUI.IdpConfig.GoogleBuilder().build()))
+                            .build(),RC_SIGN_IN);
+                }
+            }
+        };
+
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (mAuthStateListener != null) {
+            mFirebaseAuth.removeAuthStateListener(mAuthStateListener);
+        }
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -103,6 +184,8 @@ public class MainActivity extends AppCompatActivity
             mFragmentManager.beginTransaction().replace(R.id.menu_list,mSettingFragment).commit();
 
         } else if (id == R.id.nav_logout) {
+           if(mFirebaseAuth.getCurrentUser()!=null)
+            AuthUI.getInstance().signOut(this);
 
         } else if (id == R.id.nav_share) {
 

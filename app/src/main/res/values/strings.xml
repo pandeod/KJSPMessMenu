@@ -37,4 +37,11 @@
     <string name="snacks">Snacks</string>
     <string name="dinner">Dinner</string>
 
+    <string-array name="week_list">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
 </resources>
