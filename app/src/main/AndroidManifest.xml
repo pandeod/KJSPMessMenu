@@ -19,6 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="About"
+            android:parentActivityName="com.example.onkarpande.kjspmessmenu.MainActivity">
+        </activity>
     </application>
 
 </manifest>
